@@ -1,0 +1,16 @@
+{
+    "autoload": {
+        "psr-4": {
+            "antesSRP\\": "S-SRP/antes/",
+            "antesOCP\\": "O-OCP/antes/",
+            "antesLSP\\": "L-LSP/antes/",
+            "antesISP\\": "I-ISP/antes/",
+            "antesDIP\\": "D-DIP/antes/",
+            "PrincipioSRP\\": "S-SRP/despues/",
+            "PrincipioOCP\\": "O-OCP/despues/",
+            "PrincipioLSP\\": "L-LSP/despues/",
+            "PrincipioISP\\": "I-ISP/despues/",
+            "PrincipioDIP\\": "D-DIP/despues/"
+        }
+    }
+}
