@@ -41,3 +41,7 @@ $ruta = $calculador->calcular('Bogotá', 'Medellín');
 $almacenador = new AlmacenamientoRecorrido();
 $almacenador->guardar($ruta);
 ```
+
+## Ejemplo de uso del método mágico __invoke
+`__invoke`: Permite que una clase tenga un único propósito claro: ejecutar algo al ser llamada.
+Ideal cuando una clase tiene una única responsabilidad.
