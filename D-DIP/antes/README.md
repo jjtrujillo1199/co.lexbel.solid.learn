@@ -11,3 +11,27 @@ La clase `antesDIP\ServicioRecorrido`, es una clase de alto nivel (la lógica de
 
 ## Reto
 Crear la carpeta `despues` y dentro de ella crear los archivos y lógica necesaria para cumplir con el principio de inversión de dependencias, en donde el objetivo es conseguir que la información de un recorrido se pueda guardar en diferentes medios de almacenamiento. Dentro de la nueva carpeta crea también un archivo README en donde se describa la solución implementada
+
+# Despues
+- Se creo la interfaz `PrincipioDIP\interfaces\Guardable` la cual define la función donde se va a guardar la información independientemente del tipo de almacenamiento.
+- Se creo la clase `PrincipioDIP\GuardarBaseDatos` que implementa la interfaz `Guardable` y tiene la lógica para almacenar la información en base de datos.
+- Se creo la clase `PrincipioDIP\GuardarArchivo` que implementa la interfaz `Guardable` y tiene la lógica para almacenar la información en un archivo.
+- Tenemos la clase de alto nivel `PrincipioDIP\ServicioRecorrido` que utiliza abstracciones para guardar la información.
+
+## Beneficios
+- La clase de alto nivel no depende de la clase de bajo nivel, ambos dependen de las abstracciones.
+- El código es flexible y no se genera limitaciones en los cambios futuros.
+
+## Ejemplo de uso
+```
+use PrincipioDIP\GuardarArchivo;
+use PrincipioDIP\ServicioRecorrido;
+
+$guardarArchivo = new GuardarArchivo();
+
+// Inyectar las dependencias a través del constructor
+$servicioRecorrido = new ServicioRecorrido($guardarArchivo);
+
+// Guardar la Información
+$servicioRecorrido->registrarRecorrido($data);
+```
